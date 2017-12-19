@@ -19,5 +19,10 @@ namespace DestinationTraining.Controllers
 
             return View();
         }
+        public ActionResult TestPage(string testparam)
+        {
+            ViewData["testParam"] = testparam;
+            return View();
+        }
     }
 }
