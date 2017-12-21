@@ -1,10 +1,122 @@
 ﻿<!DOCTYPE html>
 <html>
 <head>
-    <title>@ViewBag.Title</title>
     <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - Destination Policy Training</title>
+
+    <environment names="Development">
+        <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.css" />
+        <link rel="stylesheet" href="~/css/site.css" />
+    </environment>
+    <environment names="Staging,Production">
+        <link rel="stylesheet" href="https://ajax.aspnetcdn.com/ajax/bootstrap/3.3.6/css/bootstrap.min.css"
+              asp-fallback-href="~/lib/bootstrap/dist/css/bootstrap.min.css"
+              asp-fallback-test-class="sr-only" asp-fallback-test-property="position" asp-fallback-test-value="absolute" />
+        <link rel="stylesheet" href="~/css/site.min.css" asp-append-version="true" />
+    </environment>
 </head>
 <body>
-	@RenderBody()
+    <div class="navbar navbar-inverse navbar-fixed-top">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a href="#" onclick="location.href='@Url.Action("Index")'" asp-area="" asp-controller="Home" asp-action="Index" class="navbar-brand">Destination Policy Training</a>
+            </div>
+            <div class="navbar-collapse collapse">
+                <ul class="nav navbar-nav">
+                    <li><a asp-area="" asp-controller="Home" asp-action="ErrorA" href="#" onclick="location.href='@Url.Action("TestPage")'">Error A</a></li>
+                    <li><a asp-area="" asp-controller="Home" asp-action="ErrorB" href="#" onclick="location.href='@Url.Action("TestPage")'">Error B</a></li>
+                    <li><a asp-area="" asp-controller="Home" asp-action="ErrorC" href="#" onclick="location.href='@Url.Action("TestPage")'">Error C</a></li>
+                    <li><a asp-area="" asp-controller="Home" asp-action="ErrorD" href="#" onclick="location.href='@Url.Action("TestPage")'">Error D</a></li>
+                    <li><a asp-area="" asp-controller="Home" asp-action="ErrorE" href="#" onclick="location.href='@Url.Action("TestPage")'">Error E</a></li>
+                    <li><a asp-area="" asp-controller="Home" asp-action="ErrorF" href="#" onclick="location.href='@Url.Action("TestPage")'">Error F</a></li>
+                    <li><a asp-area="" asp-controller="Home" asp-action="ErrorG" href="#" onclick="location.href='@Url.Action("TestPage")'">Error G</a></li>
+                    <li><a asp-area="" asp-controller="Home" asp-action="ErrorH" href="#" onclick="location.href='@Url.Action("TestPage")'">Error H</a></li>
+                    <li><a asp-area="" asp-controller="Home" asp-action="TestPage" href="#" onclick="location.href='@Url.Action("TestPage")'">Test Page</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+        
+    <div class="container body-content">
+        <hr />       
+        <br>
+        <h2>Current Page: @ViewData["Page"] </h2>
+            <h3>This site serves as a training ground for learning how to troubleshoot landing pages that do not comply with AdWords' Destination Requirements:</h3>
+        <a name="673"></a>
+<p>The following is not allowed:</p>
+
+<blockquote>
+<div><p><img alt="Not allowed" height="18px" src="//www.gstatic.com/images/icons/material/system/2x/cancel_googred_18dp.png" width="18px"> Destinations that don't function properly or have been incorrectly set up</p>
+
+<blockquote>
+<p><strong>Examples</strong>: A site that returns an HTTP error code, such as 403 Forbidden or 404 Not Found; a site that doesn't work in all locations or on common browsers and devices; DNS lookup errors; internal server errors; site under construction</p>
+</blockquote>
+</div>
+<a class="zippy">Troubleshooter: Destination not working</a>
+
+<div><ol class="spaced-list">
+  <li><strong>Check the URL that you entered.</strong> Check landing page URLs, keyword URLs, dynamic tracking URLs, and deep link URLs to make sure they are correct and don’t contain typos.</li>
+  <li><strong>Fix the ad's destination.</strong> If the URL that you entered is correct, then it's possible that your site or app isn't working properly. Here are some things to check:
+    <blockquote>
+    <p><strong>Sites and apps</strong>: Your ad can't lead to an app currently under development or a website that returns an invalid HTTP status code. Even if your site loads successfully for you, it might not be loading properly in other circumstances, such as other web browsers and devices, or by the AdWords system. Your site or app must work properly for all locations, regardless of where you're targeting your ad. Check the ad's destination on various browsers and devices to make sure that it always links to a working website or app. Apps can’t be promoted in places where the application is not available for download.</p>
+
+    <p><strong>HTTP response codes</strong>: Find out which error is happening on your destination and where it occurs. Note that a specific component on your page (like Javascript) can cause an error. Here are examples of HTTP header tools that can help:</p>
+
+    <blockquote>
+    <ul>
+      <li><a href="http://www.fiddler2.com/fiddler2" target="_blank">http://www.fiddler2.com/fiddler2</a></li>
+      <li><a href="https://addons.mozilla.org/en-US/firefox/addon/3829/" target="_blank">https://addons.mozilla.org/en-US/firefox/addon/3829/</a> (for Firefox)</li>
+      <li><a href="https://www.google.com/webmasters/tools" target="_blank">https://www.google.com/webmasters/tools</a></li>
+    </ul>
+    </blockquote>
+
+    <p>Once you know which code your landing page produces, see a <a href="https://support.google.com/webmasters/answer/40132" target="_blank">definition and tips</a> to fix each of these HTTP status codes. If you still can't identify the problem with your landing page, contact your webmaster or web hosting provider for help.</p>
+
+    <p>For sites that have recently migrated from HTTP to HTTPS, you should either set up a redirect to the new HTTPS URL or update the URLs in your ads and extensions. If you don’t, the URL may be inaccessible, which would result in ad or extension disapproval.</p>
+
+    <p><strong>App engagement ads</strong>: Check that you have set up your <a href="https://support.google.com/adwords/answer/6046977" target="_blank">deep link URL</a> correctly and that you are not using a third-party tracker. This is currently not supported for app engagement ads.</p>
+
+    <p><strong>App promotion ads</strong>: Ensure that any third-party trackers correctly redirect the user to the right app on the right app store.</p>
+    </blockquote>
+  </li>
+  <li><strong><a href="https://support.google.com/adwordspolicy/answer/7501932">Submit the campaign for review</a>.</strong> Once we confirm that the destination is working, we can approve your ads.</li>
+  <li><strong>If you can't fix your site or app</strong>, consider using a different destination for your ad that works. Edit your ad's final URL to point to another part of your website or app that doesn't violate our policies, then save your ad so we can review it again.</li>
+</ol>
+If you aren't able to fix these violations or choose not to, please remove your ad</a> to help prevent your account from becoming suspended in the future for having too many disapproved ads.</div>
+</blockquote>
+
+
+
+            
+        @RenderBody()
+            
+        <footer>
+            <p>&copy; 2018 - adilt@@</p>
+        </footer>
+    </div>
+
+    <environment names="Development">
+        <script src="~/lib/jquery/dist/jquery.js"></script>
+        <script src="~/lib/bootstrap/dist/js/bootstrap.js"></script>
+        <script src="~/js/site.js" asp-append-version="true"></script>
+    </environment>
+    <environment names="Staging,Production">
+        <script src="https://ajax.aspnetcdn.com/ajax/jquery/jquery-2.2.0.min.js"
+                asp-fallback-src="~/lib/jquery/dist/jquery.min.js"
+                asp-fallback-test="window.jQuery">
+        </script>
+        <script src="https://ajax.aspnetcdn.com/ajax/bootstrap/3.3.6/bootstrap.min.js"
+                asp-fallback-src="~/lib/bootstrap/dist/js/bootstrap.min.js"
+                asp-fallback-test="window.jQuery && window.jQuery.fn && window.jQuery.fn.modal">
+        </script>
+        <script src="~/js/site.min.js" asp-append-version="true"></script>
+    </environment>
 </body>
 </html>

@@ -16,12 +16,14 @@ namespace DestinationTraining.Controllers
 
             ViewData["Version"] = mvcName.Version.Major + "." + mvcName.Version.Minor;
             ViewData["Runtime"] = isMono ? "Mono" : ".NET";
+            ViewData["Page"] = "Homepage";
 
             return View();
         }
         public ActionResult TestPage(string testparam)
         {
             ViewData["testParam"] = testparam;
+            ViewData["Page"] = "TestPage";
             return View();
         }
     }
