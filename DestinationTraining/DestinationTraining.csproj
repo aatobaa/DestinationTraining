@@ -111,6 +111,7 @@
     </Compile>
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Helpers\Utils.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Views\Web.config" />
@@ -122,6 +123,14 @@
     <Content Include="Global.asax" />
     <Content Include="packages.config" />
     <Content Include="Views\Home\testpage.cshtml" />
+    <Content Include="Views\Home\casea.cshtml" />
+    <Content Include="Views\Home\casef.cshtml" />
+    <Content Include="Views\Home\caseB.cshtml" />
+    <Content Include="Views\Home\casec.cshtml" />
+    <Content Include="Views\Home\cased.cshtml" />
+    <Content Include="Views\Home\casee.cshtml" />
+    <Content Include="Views\Home\caseh.cshtml" />
+    <Content Include="Views\Home\caseg.cshtml" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
