@@ -40,8 +40,9 @@ namespace DestinationTraining.Controllers
 
         public ActionResult CaseB(string testparam)
         {
+            var cookies = System.Web.HttpContext.Current.Request.Cookies.Get(999);
             ViewData["Page"] = "Case B";
-            ViewData["testPram"] = testparam;
+            ViewData["testParam"] = testparam;
             return View();
         }
         public ActionResult CaseC(string testparam)

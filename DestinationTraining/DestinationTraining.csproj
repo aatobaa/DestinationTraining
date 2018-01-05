@@ -125,7 +125,7 @@
     <Content Include="Views\Home\testpage.cshtml" />
     <Content Include="Views\Home\casea.cshtml" />
     <Content Include="Views\Home\casef.cshtml" />
-    <Content Include="Views\Home\caseB.cshtml" />
+    <Content Include="Views\Home\caseb.cshtml" />
     <Content Include="Views\Home\casec.cshtml" />
     <Content Include="Views\Home\cased.cshtml" />
     <Content Include="Views\Home\casee.cshtml" />
