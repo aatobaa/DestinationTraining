@@ -48,13 +48,16 @@ namespace DestinationTraining.Controllers
         public ActionResult CaseC(string testparam)
         {
             var cookies = System.Web.HttpContext.Current.Request.Cookies;
-            if (cookies.Count > 0)
+
+            if (Request.Cookies.Get("trainingCookie") != null)
             {
                 ViewData["Page"] = "Case C";
             }
             else
             {
-                // Implementation could set cookie here and redirect; leaving out for simplicity. 
+                HttpCookie cookie = new HttpCookie("trainingCookie");
+                cookie.Expires = DateTime.Now.AddDays(1d);
+                Response.Cookies.Add(cookie);
 
                 return RedirectToRoute(new { controller = "Home", action = "CaseC" });
             }
