@@ -1,0 +1,27 @@
+﻿@{
+    Layout = "~/Views/Shared/_Layout.cshtml";;
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>URL Params</title>
+</head>
+<body>
+<h3> Instructions: Add URL parameters to this page to submit your first name, and favorite color. Use the parameters <span style="color:#16C146;">FirstName</span> and <span style="color:#16C146;">Color</span></h3>
+        <br>
+        
+        <h4>My name is: <b>@ViewData["FirstName"] </b></h4>
+        <h4>My favorite color is: <b>@ViewData["Color"] </b></h4>
+
+        @if(ViewData["FirstName"] != null && ViewData["Color"] != null)
+        {
+        <div>
+                <h1 style="color:green;">Well done!</h1>
+        </div>
+
+        }
+
+</body>
+</html>
+

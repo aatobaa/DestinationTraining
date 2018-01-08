@@ -30,7 +30,10 @@
                     <li><a asp-area="" asp-controller="Home" asp-action="CaseB" href="#" onclick="location.href='@Url.Action("CaseB")'">Case B</a></li>
                     <li><a asp-area="" asp-controller="Home" asp-action="CaseC" href="#" onclick="location.href='@Url.Action("CaseC")'">Case C</a></li>
                     <li><a asp-area="" asp-controller="Home" asp-action="CaseD" href="#" onclick="location.href='@Url.Action("CaseD")'">Case D</a></li>
-                    <!--
+                    <li><a asp-area="" asp-controller="Home" asp-action="CaseE" href="#" onclick="location.href='@Url.Action("CaseE")'">Case E</a></li>
+                    <li><a asp-area="" asp-controller="Home" asp-action="URL_Params" href="#" onclick="location.href='@Url.Action("URL_Params")'">URL Parameters</a></li>
+
+                        <!--
                         <li><a asp-area="" asp-controller="Home" asp-action="CaseE" href="#" onclick="location.href='@Url.Action("CaseE")'">Case E</a></li>
                     <li><a asp-area="" asp-controller="Home" asp-action="CaseF" href="#" onclick="location.href='@Url.Action("CaseF")'">Case F</a></li>
                     <li><a asp-area="" asp-controller="Home" asp-action="CaseG" href="#" onclick="location.href='@Url.Action("CaseG")'">Case G</a></li>
@@ -47,7 +50,7 @@
         <br>
         <h2>Current Page: @ViewData["Page"] </h2>
             <br><br>
-            <h3>This site serves as a training ground for learning how to troubleshoot landing pages that do not comply with AdWords' Destination Requirements.</h3>
+            <p>This site serves as a training ground for learning how to troubleshoot landing pages that do not comply with AdWords' Destination Requirements.</p>
         <a name="673"></a>
         @RenderBody()
             

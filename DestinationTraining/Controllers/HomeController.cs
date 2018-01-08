@@ -11,11 +11,7 @@ namespace DestinationTraining.Controllers
     {
         public ActionResult Index()
         {
-            var mvcName = typeof(Controller).Assembly.GetName();
-            var isMono = Type.GetType("Mono.Runtime") != null;
 
-            ViewData["Version"] = mvcName.Version.Major + "." + mvcName.Version.Minor;
-            ViewData["Runtime"] = isMono ? "Mono" : ".NET";
             ViewData["Page"] = "Homepage";
 
             return View();
@@ -84,15 +80,11 @@ namespace DestinationTraining.Controllers
             var useragent = System.Web.HttpContext.Current.Request.UserAgent;
             if (useragent.ToLower().Contains("bot"))
             {
-                Response.StatusCode = 403;
-                Response.StatusDescription = "Bots have been blocked";
-                return Content("403 Forbidden: Bots have been blocked from this page for security reasons.");
-            }
-            else
-            {
+                var cookies = System.Web.HttpContext.Current.Request.Cookies.Get(999);
                 ViewData["Page"] = "Case E";
+                ViewData["testParam"] = testparam;
+                return View();
             }
-            ViewData["testParam"] = testparam;
             return View();
         }
         public ActionResult CaseF(string testparam)
@@ -144,10 +136,12 @@ namespace DestinationTraining.Controllers
             return View();
         }
 
-        public ActionResult TestPage(string testparam)
+        public ActionResult URL_Params(string firstname, string color)
         {           
-            ViewData["Page"] = "TestPage";
-            ViewData["testParam"] = testparam;
+            ViewData["Page"] = "URL Parameter Training Page";
+            ViewData["FirstName"] = firstname;
+            ViewData["Color"] = color;
+
             return View();
         }
     }
