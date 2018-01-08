@@ -78,10 +78,11 @@ namespace DestinationTraining.Controllers
         public ActionResult CaseE(string testparam)
         {
             var useragent = System.Web.HttpContext.Current.Request.UserAgent;
+            ViewData["Page"] = "Case E";
+
             if (useragent.ToLower().Contains("bot"))
             {
                 var cookies = System.Web.HttpContext.Current.Request.Cookies.Get(999);
-                ViewData["Page"] = "Case E";
                 ViewData["testParam"] = testparam;
                 return View();
             }
