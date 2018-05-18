@@ -20,7 +20,7 @@ namespace DestinationTraining.Controllers
         public ActionResult CaseA(string testparam)
         {
             var useragent = System.Web.HttpContext.Current.Request.UserAgent;
-            if (useragent.ToLower().Contains("bot"))
+            if (useragent.ToLower().Contains("asdfbot"))
             {
                 Response.StatusCode = 403;
                 Response.StatusDescription = "Bots have been blocked";
